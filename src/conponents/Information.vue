@@ -8,15 +8,21 @@
 	<input type="radio" id = "woman" v-model="sex" value="女性"> 
     <label for="woman">女性</label>
     <p>-生年月日-</p>
-
-<select name="select">
-  <option value="select1">select1</option>
-  <option value="select2">select2</option>
-  <option value="select3">select3</option>
+<select name="year" >
+    <option :value="n" v-for="n in 70" :key="n">{{1950 + n}}</option>
 </select>
-<hr>
-<p>{{say}}</p>
+    <label for="year">{{yearText}}</label>
 
+<select name="month" >
+    <option :value="n" v-for="n in 12" :key="n">{{n}}</option>
+</select>
+    <label for="month">{{monthText}}</label>
+
+<select name="day" >
+    <option :value="n" v-for="n in 31" :key="n">{{n}}</option>
+</select>
+     <label for="day">{{dayText}}</label>
+<button>{{button}}</button>
   </div>
     
 
@@ -28,11 +34,15 @@ export default {
     data() {
         return {
              sex: "",
-             message: 'hello'
+             yearText: '年',
+             monthText:'月',
+             dayText:'日',
+             button:'次へ進む',
+             listlabel:["Mens","Womens","Kids"],
         };
     },
     computed: {
-        say() {
+        created() {
          return this.message;
         }
     }
