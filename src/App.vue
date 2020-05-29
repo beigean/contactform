@@ -1,26 +1,7 @@
 <template>
-   <div id="app">
-     <Information></Information>
-   </div>
+  <div id="app">
+    <router-view> </router-view>
+  </div>
 </template>
 
-<script>
 
-import Information from './conponents/Information.vue';
-
-export default {
-  
-   name: "",
-   components: {
-      Information
-   },
-    methods: {
-
-    }
-};
-
-</script>
-
-<style>
-
-</style>
