@@ -4,9 +4,9 @@ import Page01 from '../components/Page01.vue'
 import Page02 from '../components/Page02.vue'
 import Page03 from '../components/Page03.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
     path: '/01',
     name: 'Page01',
@@ -25,11 +25,11 @@ Vue.use(VueRouter)
     name: 'Page03',
     component: Page03
   }
-]
+];
 
 const router = new VueRouter({
   mode: "history",
   routes
-})
+});
 
-export default router
+export default router;

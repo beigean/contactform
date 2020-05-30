@@ -2,8 +2,8 @@
   <div id="page03">
     <p>STEP3</p>
 
-    <consultation/>
-    
+    <Consultation/>
+
     <br />
     <button @click="toPrev()">前へ戻る</button>
     <button>次へ進む</button>
