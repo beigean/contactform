@@ -2,7 +2,8 @@
   <div id="page03">
     <p>STEP3</p>
 
-    <Consultation/>
+    <Consultation v-bind:onChange="update_answer"/>
+    {{ answers.consultation }}
 
     <br />
     <button @click="toPrev()">前へ戻る</button>
@@ -18,6 +19,7 @@ export default {
   components: {
     Consultation,
   },
+  props: ['answers', 'update_answer'],
   methods: {
     toPrev() {
       this.$router.push("/02");

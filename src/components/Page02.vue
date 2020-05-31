@@ -6,9 +6,12 @@
     <!-- <div v-for='(item, index) in items' v-bind:key="item">
       <item.component v-bind:isVisible="item.isVisible" v-bind:onClick="onClickHandler(index)"/>
     </div> -->
-    <Insurance v-bind:isVisible="items[0].isVisible" v-bind:onClick="() => onClickHandler(0)"/>
-    <HospitalizedNow v-bind:isVisible="items[1].isVisible" v-bind:onClick="() => onClickHandler(1)"/>
-    <HospitalizedPast v-bind:isVisible="items[2].isVisible" v-bind:onClick="() => onClickHandler(2)"/>
+    <Insurance v-bind:isVisible="items[0].isVisible" v-bind:onClick="() => onClickHandler(0)" v-bind:onChange="update_answer"/>
+    {{ answers.insurance }}
+    <HospitalizedNow v-bind:isVisible="items[1].isVisible" v-bind:onClick="() => onClickHandler(1)" v-bind:onChange="update_answer"/>
+    {{ answers.hospitalized_now }}
+    <HospitalizedPast v-bind:isVisible="items[2].isVisible" v-bind:onClick="() => onClickHandler(2)" v-bind:onChange="update_answer"/>
+    {{ answers.hospitalized_past }}
 
     <br />
     <button @click="toPrev()">前へ戻る</button>
@@ -37,6 +40,7 @@ export default {
       ]
     };
   },
+  props: ['answers', 'update_answer'],
   methods: {
     toNext() {
       this.$router.push("/03");
