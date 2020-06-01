@@ -1,35 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Page01 from '../components/Page01.vue'
-import Page02 from '../components/Page02.vue'
-import Page03 from '../components/Page03.vue'
+import Information from '../views/Information.vue'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
-const routes = [
+  const routes = [
   {
-    path: '/01',
-    name: 'Page01',
-    component: Page01
+    path: '/',
+    name: 'Information',
+    component: Information
   },
   {
-    path: '/02',
-    name: 'Page02',
+    path: '/questionary',
+    name: 'Questionary',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: Page02
+    component: () => import('../views/Questionary.vue')
   },
   {
-    path: '/03',
-    name: 'Page03',
-    component: Page03
-  }
-];
+    path: '/consult',
+    name: 'Consult',
+
+    component: () => import('../views/Consult.vue')
+  },
+  {
+    path: '/summary',
+    name: 'Summary',
+    component: () => import('../views/Summary.vue')
+  },
+]
 
 const router = new VueRouter({
   mode: "history",
   routes
-});
+})
 
-export default router;
+export default router
