@@ -24,6 +24,15 @@ export default {
     textArea(e) {
        this.$store.commit('textArea', e.target.value);
     }
-  }
+  },
+  created: function () {
+    console.log('called created at consult');
+  },
+  mounted: function () {
+    console.log('called mounted at consult');
+  },
+  beforeDestroy: function () {
+    console.log('called beforeDestroy at consult');
+  },
 };
 </script>

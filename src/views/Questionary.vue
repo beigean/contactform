@@ -60,7 +60,16 @@ export default {
       selctPast(e) {
        this.$store.commit('selctPast', e.target.value);
     }
-  }
+  },
+  created: function () {
+    console.log('called created at questionary');
+  },
+  mounted: function () {
+    console.log('called mounted at questionary');
+  },
+  beforeDestroy: function () {
+    console.log('called beforeDestroy at questionary');
+  },
 };
 </script>
 <style scoped>

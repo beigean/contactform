@@ -70,6 +70,15 @@ export default {
        this.$store.commit('lifeInsurance', e.target.value);
     }
   },
+  created: function () {
+    console.log('called created at information');
+  },
+  mounted: function () {
+    console.log('called mounted at information');
+  },
+  beforeDestroy: function () {
+    console.log('called beforeDestroy at information');
+  },
 };
 </script>
 

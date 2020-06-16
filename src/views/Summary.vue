@@ -32,6 +32,14 @@ export default {
     past() { return this.$store.getters.past},
     text() { return this.$store.getters.text}
   },
- 
+  created: function () {
+    console.log('called created at summary');
+  },
+  mounted: function () {
+    console.log('called mounted at summary');
+  },
+  beforeDestroy: function () {
+    console.log('called beforeDestroy at summary');
+  },
 };
 </script>
